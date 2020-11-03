@@ -1,38 +1,33 @@
 # !/usr/bin/env python
 # encoding: utf-8
 
+import json
+import os
+import sys
 
 import tweepy  # https://github.com/tweepy/tweepy
-import json
-import sys
-import csv # write the program to a cvs file
-import codecs
 
 # Twitter API credentials
-consumer_key = ""
-consumer_secret = ""
-access_key = ""
-access_secret = ""
+import utils
+
+consumer_key = os.environ.get("TWITTER_CONSUMER_KEY")
+consumer_secret = os.environ.get("TWITTER_CONSUMER_SECRET")
+access_key = os.environ.get("TWITTER_ACCESS_KEY")
+access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
 
 
-# get the tweets from this specific tweeter user
-# the account has to be public
-# It is developed on top of the sample code which is given in class
-# https://drive.google.com/file/d/1dNahyZnwgqwUUdbV5I0u68b8pQADBiWi/view
-def get_all_tweets(screen_name):
-
+def get_new_tweets(screen_name):
+    # test1
     # authorize twitter, initialize tweepy
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
 
-    # initialize a list to hold all tweets from this user
-    alltweets = []
-
     # make initial request for most recent tweets (200 is the maximum allowed count)
     # catch invalid inputs
     try:
         new_tweets = api.user_timeline(screen_name=screen_name, count=10)
+        return new_tweets
     except tweepy.error.TweepError:
         print("The input contain unauthorized content, try another input")
         sys.exit(1)
@@ -43,6 +38,17 @@ def get_all_tweets(screen_name):
         # reference to: https://stackoverflow.com/questions/4990718/about-catching-any-exception
         print("Unexpected error:", sys.exc_info()[0])
         sys.exit(1)
+
+
+# get the tweets from this specific tweeter user
+# the account has to be public
+# It is developed on top of the sample code which is given in class
+# https://drive.google.com/file/d/1dNahyZnwgqwUUdbV5I0u68b8pQADBiWi/view
+def get_all_tweets(screen_name):
+    # initialize a list to hold all tweets from this user
+    alltweets = []
+
+    new_tweets = get_new_tweets(screen_name)
 
     alltweets.extend(new_tweets)
 
@@ -55,7 +61,7 @@ def get_all_tweets(screen_name):
         print('getting tweets before %s' % (oldest))
 
         # all subsiquent requests use the max_id param to prevent duplicates
-        new_tweets = api.user_timeline(screen_name=screen_name, count=10, max_id=oldest)
+        new_tweets = utils.get_user_timeline(screen_name=screen_name, count=10, max_id=oldest)
 
         # save most recent tweets
         alltweets.extend(new_tweets)
@@ -105,6 +111,7 @@ def get_all_tweets(screen_name):
         print("Done")
     pass
     '''
+
 
 if __name__ == '__main__':
     # pass in the username of th e account you want to download

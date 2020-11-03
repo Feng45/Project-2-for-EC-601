@@ -3,7 +3,7 @@ from google.cloud.language_v1 import enums
 from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
-# set GOOGLE_APPLICATION_CREDENTIALS= jsonfile here
+# set GOOGLE_APPLICATION_CREDENTIALS= C:\Users\feng2\Desktop\Fall_2020\Project-2-for-EC-601\GOOGLE_KEY.JSON
 # reference https://cloud.google.com/natural-language/docs/sentiment-tutorial
 # reference https://cloud.google.com/natural-language/docs/analyzing-entity-sentiment
 def analyze_entity_sentiment(text_content):
