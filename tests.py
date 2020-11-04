@@ -31,10 +31,3 @@ class TestGooleJsonFile(unittest.TestCase):
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
         text_content = "Google, headquartered in Mountain."
         google1.analyze_entity_sentiment(text_content)
-
-class TweepyTimeTestCase(unittest.TestCase):
-
-    def test_get_new_tweets_time(self):
-        res = Tweeter_time.tweeter_time("@TheDailyShow")
-        self.assertEqual(isinstance(res[0], Status), True)
-        self.assertEqual(len(res), 10)
