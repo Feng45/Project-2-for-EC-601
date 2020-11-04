@@ -91,4 +91,4 @@ class TestGooleJsonFile(unittest.TestCase):
         self.assertListEqual(read_and_calculate.calculate_entity(category[3]), [0.33043478477908217, 0.002173912104057229])
         self.assertListEqual(read_and_calculate.calculate_entity(category[4]), [0.2714285736992246, -0.08571428841068632])
         self.assertListEqual(read_and_calculate.calculate_entity(category[5]), [0.20000000058540277, -0.12857142809246266])
-        self.assertListEqual(read_and_calculate.calculate_entity(category[5]), [0.2666666756073634, 0.13333334028720856])
+        self.assertListEqual(read_and_calculate.calculate_entity(category[6]), [0.2666666756073634, 0.13333334028720856])
