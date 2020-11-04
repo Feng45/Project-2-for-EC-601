@@ -19,11 +19,7 @@ class TweepyFileTestCase(unittest.TestCase):
         res = Tweepy_file.get_new_tweets("@TheDailyShow")
         self.assertEqual(isinstance(res[0], Status), True)
         self.assertEqual(len(res), 10)
-        # todo: 获取下oldest在测试
 
-    def test_get_user_timeline(self):
-        res = utils.get_user_timeline("@TheDailyShow", 10, 1)
-        pass
 
 
 class TestGooleJsonFile(unittest.TestCase):
