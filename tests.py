@@ -7,6 +7,7 @@ import Tweepy_file
 import Tweeter_time
 import Tweepy_Hashtag
 import google1
+import google2
 import utils
 import tweepy
 
@@ -45,3 +46,16 @@ class TestGooleJsonFile(unittest.TestCase):
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
         text_content = "Google, headquartered in Mountain."
         google1.analyze_entity_sentiment(text_content)
+
+class TestGooleJsonFile(unittest.TestCase):
+
+    def test_google_json_file_1(self):
+        tmp = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+        with open("google.json", "w") as f:
+            f.write(tmp)
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
+        file = '#VOTE_tweets.csv'
+        google2.analyze_overal_entity_sentiment(file)
+        
+
+
