@@ -21,6 +21,12 @@ class TweepyFileTestCase(unittest.TestCase):
         self.assertEqual(isinstance(res[0], Status), True)
         self.assertEqual(len(res), 10)
 
+class TweepyFileTestCase(unittest.TestCase):
+
+    def test_get_new_tweets_1(self):
+        res = Tweeter_time.get_new_tweets("@TheDailyShow")
+        self.assertEqual(isinstance(res[0], Status), True)
+        self.assertEqual(len(res), 10)
 
 class TestGooleJsonFile(unittest.TestCase):
 

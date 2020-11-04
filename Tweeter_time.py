@@ -23,6 +23,30 @@ access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
 # This code is worked based on the code in the two links below
 # https://gist.github.com/alexdeloy/fdb36ad251f70855d5d6
 # https://stackoverflow.com/questions/49731259/tweepy-get-tweets-between-two-dates
+
+def get_new_tweets(screen_name):
+    # test1
+    # authorize twitter, initialize tweepy
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_key, access_secret)
+    api = tweepy.API(auth)
+
+    # make initial request for most recent tweets (200 is the maximum allowed count)
+    # catch invalid inputs
+    try:
+        new_tweets = api.user_timeline(screen_name=screen_name, count=10)
+        return new_tweets
+    except tweepy.error.TweepError:
+        print("The input contain unauthorized content, try another input")
+        sys.exit(1)
+        # save most recent tweets, use extend to save the files
+    # catch any unexpected errors, such as twitter not responding
+    except:
+        # catch any additional error
+        # reference to: https://stackoverflow.com/questions/4990718/about-catching-any-exception
+        print("Unexpected error:", sys.exc_info()[0])
+        sys.exit(1)
+
 def tweeter_time(screen_name):
 
     # authorize twitter, initialize tweepy
@@ -45,18 +69,8 @@ def tweeter_time(screen_name):
 
     tweets = []
     # retrieve all tweets
-    try:
-        new_tweets = api.user_timeline(screen_name=screen_name)
-    except tweepy.error.TweepError:
-        print("The input contain unauthorized content, try another input")
-        sys.exit(1)
-        # save most recent tweets, use extend to save the files
-    # catch any unexpected errors, such as twitter not responding
-    except:
-        # catch any additional error
-        # reference to: https://stackoverflow.com/questions/4990718/about-catching-any-exception
-        print("Unexpected error:", sys.exc_info()[0])
-        sys.exit(1)
+
+    new_tweets = get_new_tweets(screen_name)
 
     for tweet in new_tweets:
         if tweet.created_at > startDate:
