@@ -86,3 +86,8 @@ class TestGooleJsonFile(unittest.TestCase):
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
         category = ['OTHER', 'CONSUMER_GOOD', 'LOCATION', 'PERSON', 'EVENT', 'ORGANIZATION', 'WORK_OF_ART']
         self.assertListEqual(read_and_calculate.calculate_entity(category[0]), [0.34190871705652764, -0.12780083143983145])
+        self.assertListEqual(read_and_calculate.calculate_entity(category[1]), [0.10000000149011612, 0.10000000149011612])
+        self.assertListEqual(read_and_calculate.calculate_entity(category[2]), [0.18571428528853826, 0.04285714030265808])
+        self.assertListEqual(read_and_calculate.calculate_entity(category[3]), [0.2714285736992246, -0.08571428841068632])
+        self.assertListEqual(read_and_calculate.calculate_entity(category[4]), [0.20000000058540277, -0.12857142809246266])
+        self.assertListEqual(read_and_calculate.calculate_entity(category[5]), [0.2666666756073634, 0.13333334028720856])
