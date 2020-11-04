@@ -9,13 +9,14 @@ import codecs
 import datetime
 import xlsxwriter
 from datetime import datetime
+import os
 
 
 # Twitter API credentials
-consumer_key = ""
-consumer_secret = ""
-access_key = ""
-access_secret = ""
+consumer_key = os.environ.get("TWITTER_CONSUMER_KEY")
+consumer_secret = os.environ.get("TWITTER_CONSUMER_SECRET")
+access_key = os.environ.get("TWITTER_ACCESS_KEY")
+access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
 
 # get the tweets from this specific tweeter user
 # the account has to be public
