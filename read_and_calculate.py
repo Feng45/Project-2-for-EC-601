@@ -79,6 +79,7 @@ def calculate_entity(entity):
 if __name__ == '__main__':
     # pass in the username of th e account you want to download
     result = analyze_entity_sentiment_detail()
+    print(result)
     for entity in result:
         print("    ")
         calculate_entity(entity)
