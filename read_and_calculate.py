@@ -74,6 +74,7 @@ def calculate_entity(entity):
         print("the texts are overall emotional ")
     else:
         print("the text are over all emotional")
+    return [average_magnitude, average_score]
 
 
 if __name__ == '__main__':

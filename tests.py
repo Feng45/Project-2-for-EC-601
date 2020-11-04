@@ -78,9 +78,11 @@ class TestGooleJsonFile(unittest.TestCase):
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
         result = read_and_calculate.analyze_entity_sentiment_detail()
         self.assertListEqual(result, ['OTHER', 'CONSUMER_GOOD', 'LOCATION', 'PERSON', 'EVENT', 'ORGANIZATION', 'WORK_OF_ART'])
-        
 
-
-        
-
-
+    def test_test_num(self):
+        tmp = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+        with open("google.json", "w") as f:
+            f.write(tmp)
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
+        category = ['OTHER', 'CONSUMER_GOOD', 'LOCATION', 'PERSON', 'EVENT', 'ORGANIZATION', 'WORK_OF_ART']
+        self.assertListEqual(read_and_calculate.calculate_entity(category[0]), [0.34190871705652764, -0.12780083143983145])
