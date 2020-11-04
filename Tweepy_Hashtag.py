@@ -6,10 +6,14 @@ import csv
 import sys
 # reference https://gist.github.com/vickyqian/f70e9ab3910c7c290d9d715491cde44c
 # Twitter API credentials
-consumer_key = ''
-consumer_secret = ''
-access_token = ''
-access_token_secret = ''
+import os
+
+
+# Twitter API credentials
+consumer_key = os.environ.get("TWITTER_CONSUMER_KEY")
+consumer_secret = os.environ.get("TWITTER_CONSUMER_SECRET")
+access_key = os.environ.get("TWITTER_ACCESS_KEY")
+access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
 
 def get_hashtag_tweets(hashtag, number):
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -22,6 +26,7 @@ def get_hashtag_tweets(hashtag, number):
 
     try:
         tweepy.Cursor(api.search, q=hashtag).items()
+        return tweepy.Cursor(api.search, q=hashtag).items()
     except:
         # catch any additional error
         # reference to: https://stackoverflow.com/questions/4990718/about-catching-any-exception

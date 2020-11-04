@@ -5,6 +5,7 @@ from tweepy import Status
 
 import Tweepy_file
 import Tweeter_time
+import Tweepy_Hashtag
 import google1
 import utils
 
@@ -27,6 +28,12 @@ class TweepyFileTestCase(unittest.TestCase):
         res = Tweeter_time.get_new_tweets("@TheDailyShow")
         self.assertEqual(isinstance(res[0], Status), True)
         self.assertEqual(len(res), 10)
+
+class TweepyFileTestCase(unittest.TestCase):
+
+    def test_get_hashtag_tweets(self):
+        res = Tweepy_Hashtag.get_hashtag_tweets("#VOTE",100)
+        self.assertEqual(isinstance(res[0], Status), True)
 
 class TestGooleJsonFile(unittest.TestCase):
 
