@@ -8,6 +8,7 @@ import Tweeter_time
 import Tweepy_Hashtag
 import google1
 import utils
+import tweepy
 
 
 class TestCase(unittest.TestCase):
@@ -33,7 +34,7 @@ class TweepyFileTestCase(unittest.TestCase):
 
     def test_get_hashtag_tweets(self):
         res = Tweepy_Hashtag.get_hashtag_tweets("#VOTE",100)
-        self.assertEqual(isinstance(res[0], Status), True)
+        self.assertEqual(isinstance(res, tweepy.cursor.ItemIterator), True)
 
 class TestGooleJsonFile(unittest.TestCase):
 

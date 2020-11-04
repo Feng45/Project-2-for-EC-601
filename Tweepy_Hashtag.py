@@ -31,9 +31,7 @@ def get_hashtag_tweets(hashtag, number):
         # reference to: https://stackoverflow.com/questions/4990718/about-catching-any-exception
         print("Unexpected error:", sys.exc_info()[0])
         sys.exit(1)
-  
-    return tweepy.Cursor(api.search, q=hashtag,tweet_mode='extended').items(number)
-    
+
     csvFile = open('%s_tweets1.csv' % hashtag, 'w')
     #Use csv Writer
     csvWriter = csv.writer(csvFile)
@@ -42,6 +40,8 @@ def get_hashtag_tweets(hashtag, number):
     for tweet in tweepy.Cursor(api.search, q=hashtag,tweet_mode='extended').items(number):
         print(tweet.created_at, tweet.full_text)
         csvWriter.writerow([tweet.created_at, tweet.full_text.encode('utf-8')])
+    
+    return tweepy.Cursor(api.search, q=hashtag,tweet_mode='extended').items(number)
 
 if __name__ == '__main__':
     # pass in the username of the account you want to download
