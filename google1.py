@@ -1,6 +1,4 @@
 from google.cloud import language_v1
-from google.cloud.language_v1 import enums
-from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 # set GOOGLE_APPLICATION_CREDENTIALS= C:\Users\feng2\Desktop\Fall_2020\Project-2-for-EC-601\GOOGLE_KEY.JSON
