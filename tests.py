@@ -56,6 +56,19 @@ class TestGooleJsonFile(unittest.TestCase):
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
         file = '#VOTE_tweets.csv'
         google2.analyze_overal_entity_sentiment(file)
+
+    def value_validation(self):
+        tmp = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+        with open("google.json", "w") as f:
+            f.write(tmp)
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google.json"
+        file = '#VOTE_tweets.csv'
+        google2.analyze_overal_entity_sentiment(file)
+        result = google2.calculate_overal_entity_sentiment()
+        self.assertEqual(result[0], -0.14700000323355197)
+        self.assertEqual(result[1], 0.7190000089257955)
+
+
         
 
 

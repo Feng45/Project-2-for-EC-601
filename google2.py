@@ -57,6 +57,8 @@ def calculate_overal_entity_sentiment():
         print("the text is not emotional ")
     else:
         print("the text is emotional")
+    
+    return [ave_score, ave_magnitude]
 
 
 if __name__ == '__main__':
