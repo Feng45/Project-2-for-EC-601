@@ -17,7 +17,7 @@ access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
 
 def get_hashtag_tweets(hashtag, number):
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
+    auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth,wait_on_rate_limit=True)
     # Open/Create a file to append data
     if number > 2000:
