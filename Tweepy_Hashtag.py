@@ -26,13 +26,14 @@ def get_hashtag_tweets(hashtag, number):
 
     try:
         tweepy.Cursor(api.search, q=hashtag).items()
-        return tweepy.Cursor(api.search, q=hashtag).items()
     except:
         # catch any additional error
         # reference to: https://stackoverflow.com/questions/4990718/about-catching-any-exception
         print("Unexpected error:", sys.exc_info()[0])
         sys.exit(1)
-
+  
+    return tweepy.Cursor(api.search, q=hashtag,tweet_mode='extended').items(number)
+    
     csvFile = open('%s_tweets1.csv' % hashtag, 'w')
     #Use csv Writer
     csvWriter = csv.writer(csvFile)
