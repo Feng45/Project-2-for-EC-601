@@ -56,8 +56,8 @@ The user needs to input the text content which they want to analyze into the fun
 The function will then output Entity Level Sentiment with its's Representative name for the entity, Entity type, 
 Salience score, Entity sentiment score, Entity sentiment magnitude. At the end of the output, the function will output overall sentiment score with its magnitude. 
 For example:
-if __name__ == '__main__':
-    # pass in the username of th e account you want to download
+In main: 
+    # pass in the username of the account you want to download
     text_content = "Google, headquartered in Mountain."
     analyze_entity_sentiment(text_content)
 output:
