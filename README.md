@@ -73,36 +73,25 @@ For example:
 
 In main: 
 
-    pass in the username of the account you want to download
-    
-    text_content = "Google, headquartered in Mountain."
-    
+    pass in the username of the account you want to download    
+    text_content = "Google, headquartered in Mountain."    
     analyze_entity_sentiment(text_content)
     
-output:
+In output terminal:
 
-Representative name for the entity: Google
-
-Entity type: OTHER
-
-Salience score: 0.9005488753318787
-
-Entity sentiment score: 0.0
-
-Entity sentiment magnitude: 0.0
+    Representative name for the entity: Google
+    Entity type: OTHER
+    Salience score: 0.9005488753318787
+    Entity sentiment score: 0.0
+    Entity sentiment magnitude: 0.0
 
 
-Representative name for the entity: Mountain
-
-Entity type: LOCATION
-
-Salience score: 0.09945113211870193
-
-Entity sentiment score: 0.0
-
-Entity sentiment magnitude: 0.0
-
-Overall sentiment: 0.0, 0.0
+    Representative name for the entity: Mountain
+    Entity type: LOCATION
+    Salience score: 0.09945113211870193
+    Entity sentiment score: 0.0
+    Entity sentiment magnitude: 0.0
+    Overall sentiment: 0.0, 0.0
 
 Application:
 
@@ -121,19 +110,14 @@ The system then runs to extract the score and sentiment of the sentence into a c
 
 The system then calculate the average sentiment score and magnituded of the collected tweets and generate outputs.
 
-an example of output:
+In output terminal:
 
-...
-
-system running
-
-system running
-
-The overall average sentiment score is -0.14700000323355197, the average sentiment magnitude is 0.7190000089257955
-
-the overall sentiment of the texts is relatively neutral
-
-the text are over all emotional
+    ...
+    system running
+    system running
+    The overall average sentiment score is -0.14700000323355197, the average sentiment magnitude is 0.7190000089257955
+    the overall sentiment of the texts is relatively neutral
+    the text are over all emotional
 
 
 # Sub application 2:
@@ -148,108 +132,50 @@ The system then runs to extract the score and sentiment of individual Entity Lev
 
 The system then calculate the average sentiment score and magnituded of the collected for each entity level for the tweets and generate outputs.
 
-an example of output:
-
-....
-
-file running
-
-file running
-
-file running
-
-For Entity Level OTHER,
-
-the average sentiment score is -0.12780083143983145, the average sentiment magnitude is 0.34190871705652764
-
-There are 252 neutral words for this keyword
-
-the overall sentiment of the text relatively neutral
-
-the text are over all emotional
-
-
-For Entity Level CONSUMER_GOOD,
-
-the average sentiment score is 0.10000000149011612, the average sentiment magnitude is 0.10000000149011612
-
-There are 3 neutral words for this keyword
-
-the overall sentiment of the text relatively neutral
-
-the text are over all emotional
-
-
-For Entity Level LOCATION,
-
-the average sentiment score is 0.04285714030265808, the average sentiment magnitude is 0.18571428528853826
-
-There are 10 neutral words for this keyword
-
-the overall sentiment of the text relatively neutral
-
-the text are over all emotional
-
-
-For Entity Level PERSON,
-
-the average sentiment score is 0.002173912104057229, the average sentiment magnitude is 0.33043478477908217
-
-There are 50 neutral words for this keyword
-
-the overall sentiment of the text relatively neutral
-
-the text are over all emotional
-
-
-For Entity Level EVENT,
-
-the average sentiment score is -0.08571428841068632, the average sentiment magnitude is 0.2714285736992246
-
-There are 11 neutral words for this keyword
-
-the overall sentiment of the text relatively neutral
-
-the text are over all emotional
-
-
-For Entity Level ORGANIZATION,
-
-the average sentiment score is -0.12857142809246266, the average sentiment magnitude is 0.20000000058540277
-
-There are 14 neutral words for this keyword
-
-the overall sentiment of the text relatively neutral
-
-the text are over all emotional
-
-
-For Entity Level WORK_OF_ART,
-
-the average sentiment score is 0.13333334028720856, the average sentiment magnitude is 0.2666666756073634
-
-There are 4 neutral words for this keyword
-
-the overall sentiment of the text relatively neutral
-
-the text are over all emotional
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In output terminal:
+
+    ....
+    file running
+    file running
+    file running
+    For Entity Level OTHER,
+    the average sentiment score is -0.12780083143983145, the average sentiment magnitude is 0.34190871705652764
+    There are 252 neutral words for this keyword
+    the overall sentiment of the text relatively neutral
+    the text are over all emotional
+
+    For Entity Level CONSUMER_GOOD,
+    the average sentiment score is 0.10000000149011612, the average sentiment magnitude is 0.10000000149011612
+    There are 3 neutral words for this keyword
+    the overall sentiment of the text relatively neutral
+    the text are over all emotional
+
+    For Entity Level LOCATION,
+    the average sentiment score is 0.04285714030265808, the average sentiment magnitude is 0.18571428528853826
+    There are 10 neutral words for this keyword
+    the overall sentiment of the text relatively neutral
+    the text are over all emotional
+
+    For Entity Level PERSON,
+    the average sentiment score is 0.002173912104057229, the average sentiment magnitude is 0.33043478477908217
+    There are 50 neutral words for this keyword
+    the overall sentiment of the text relatively neutral
+    the text are over all emotional
+
+    For Entity Level EVENT,
+    the average sentiment score is -0.08571428841068632, the average sentiment magnitude is 0.2714285736992246
+    There are 11 neutral words for this keyword
+    the overall sentiment of the text relatively neutral
+    the text are over all emotional
+
+    For Entity Level ORGANIZATION,
+    the average sentiment score is -0.12857142809246266, the average sentiment magnitude is 0.20000000058540277
+    There are 14 neutral words for this keyword
+    the overall sentiment of the text relatively neutral
+    the text are over all emotional
+
+    For Entity Level WORK_OF_ART,
+    the average sentiment score is 0.13333334028720856, the average sentiment magnitude is 0.2666666756073634
+    There are 4 neutral words for this keyword
+    the overall sentiment of the text relatively neutral
+    the text are over all emotional
