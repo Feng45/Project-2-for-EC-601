@@ -93,7 +93,7 @@ In output terminal:
     Entity sentiment magnitude: 0.0
     Overall sentiment: 0.0, 0.0
 
-Application:
+# Application:
 
 The application can be tested with a pre generated file named #VOTE_tweets using the Tweepy_Hashtag.py function.
 The goal of the application is to retrieve the most recent # of tweets by people under the hashtag #VOTE and understand people's general sentiment towards it.
