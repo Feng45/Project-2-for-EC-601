@@ -57,7 +57,7 @@ The function will then output Entity Level Sentiment with its's Representative n
 Salience score, Entity sentiment score, Entity sentiment magnitude. At the end of the output, the function will output overall sentiment score with its magnitude. 
 For example:
 In main: 
-    # pass in the username of the account you want to download
+    pass in the username of the account you want to download
     text_content = "Google, headquartered in Mountain."
     analyze_entity_sentiment(text_content)
 output:
